@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+ 
+
+/* --- Root Theme Variables --- */
+:root {
+  --background: #f8fafc; /* light slate-50 */
+  --foreground: #0f172a; /* dark slate-900 */
+  --card-bg: #ffffff;
+  --accent: #0369a1; /* sky-700 */
+  --accent-hover: #075985; /* sky-800 */
+  --muted: #475569; /* slate-600 */
+  --border: #e2e8f0; /* slate-200 */
+  --radius: 0.75rem;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+ 
+
+/* --- Dark Mode (Activated via next-themes) --- */
+[data-theme="dark"] {
+  --background: #0f172a; /* slate-900 */
+  --foreground: #f1f5f9; /* slate-100 */
+  --card-bg: #1e293b; /* slate-800 */
+  --accent: #38bdf8; /* sky-400 */
+  --accent-hover: #7dd3fc; /* sky-300 */
+  --muted: #94a3b8; /* slate-400 */
+  --border: #334155; /* slate-700 */
+}
+
+ 
+
+/* --- Base Body Styles --- */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ 
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+}
+
+
+p {
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+ 
+
+/* --- Utility Styles --- */
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+ 
+
+/* --- Smooth Scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+ 
+
+/* --- Buttons & Links --- */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.2s ease-in-out;
+}
+ 
+a:hover {
+  color: var(--accent-hover);
+}
+
+ 
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: #475569;
+}
+
+ 
+
+/* --- Transition All Themed Elements --- */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
